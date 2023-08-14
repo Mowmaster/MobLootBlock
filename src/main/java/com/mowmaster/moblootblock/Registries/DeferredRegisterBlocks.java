@@ -1,8 +1,8 @@
-package com.mowmaster.moblootblock.DeferredRegistries;
+package com.mowmaster.moblootblock.Registries;
 
-import Blocks.BaseMobLootBlock;
+import com.mowmaster.moblootblock.Blocks.BaseMobLootBlock;
+import com.mowmaster.moblootblock.Blocks.BaseMobLootBlockItem;
 import com.mowmaster.moblootblock.moblootblock;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -186,7 +186,7 @@ public class DeferredRegisterBlocks
     }
 
     private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block) {
-        DeferredRegisterItems.ITEMS.register(name, () -> new BlockItem(block.get(),
+        DeferredRegisterItems.ITEMS.register(name, () -> new BaseMobLootBlockItem(block.get(),
                 new Item.Properties()));
     }
 

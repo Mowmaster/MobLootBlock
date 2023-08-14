@@ -1,15 +1,13 @@
 package com.mowmaster.moblootblock.Items;
 
-import com.mowmaster.moblootblock.DeferredRegistries.DeferredRegisterItems;
+import com.mowmaster.moblootblock.Registries.DeferredRegisterItems;
 import com.mowmaster.moblootblock.moblootblock;
 import com.mowmaster.mowlib.MowLibUtils.MowLibCompoundTagUtils;
 import com.mowmaster.mowlib.MowLibUtils.MowLibTooltipUtils;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;

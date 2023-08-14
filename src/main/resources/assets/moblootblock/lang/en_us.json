@@ -1,8 +1,11 @@
 {
   "itemGroup.moblootblock": "Mob Loot Block",
+  "moblootblock.description_shift": "Press Shift for More Info:",
   "moblootblock.moblootblock.tooltip_crafting": "Craft by Combining 9 Chunks of a specific mob together in a crafting bench.",
   "moblootblock.moblootblock.tooltip_drops": "Breaking this block will drop mob specific loot.",
   "moblootblock.moblootblock.tooltip_silktouch": "(Can be Picked Up with Silktouch)",
+  "moblootblock.moblootblock.tooltip_shiftmsg": "While Crouching, 'Placing' the block will instead spawn the respective mob",
+  "moblootblock.moblootblock.tooltip_shiftmsgtwo": " - Right Clicking this block on a spawner will change the spawner to the respective mob.",
   "item.moblootblock.mob_bit": "Mob Bit",
   "item.moblootblock.mob_piece": "Mob Piece",
   "item.moblootblock.mob_chunk": "Mob Chunk",

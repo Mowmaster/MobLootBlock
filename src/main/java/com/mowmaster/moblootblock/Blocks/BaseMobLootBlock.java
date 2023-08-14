@@ -1,8 +1,6 @@
-package Blocks;
+package com.mowmaster.moblootblock.Blocks;
 
-import com.mowmaster.moblootblock.DeferredRegistries.DeferredRegisterItems;
 import com.mowmaster.moblootblock.moblootblock;
-import com.mowmaster.mowlib.MowLibUtils.MowLibCompoundTagUtils;
 import com.mowmaster.mowlib.MowLibUtils.MowLibTooltipUtils;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.registries.Registries;
@@ -17,7 +15,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.enchantment.Enchantments;
@@ -30,9 +27,7 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
 import java.util.List;
-
 
 public class BaseMobLootBlock extends Block {
 
@@ -108,6 +103,13 @@ public class BaseMobLootBlock extends Block {
         MutableComponent componentSilk = Component.translatable(moblootblock.MODID + ".moblootblock.tooltip_silktouch");
         componentSilk.withStyle(ChatFormatting.AQUA);
         MowLibTooltipUtils.addTooltipMessage(p_49818_,p_49816_,componentSilk);
+
+        MutableComponent componentShift = Component.translatable(moblootblock.MODID + ".moblootblock.tooltip_shiftmsg");
+        componentShift.withStyle(ChatFormatting.GREEN);
+        MutableComponent componentShiftAdditional = Component.translatable(moblootblock.MODID + ".moblootblock.tooltip_shiftmsgtwo");
+        componentShiftAdditional.withStyle(ChatFormatting.LIGHT_PURPLE);
+        componentShift.append(componentShiftAdditional);
+        MowLibTooltipUtils.addTooltipShiftMessage(moblootblock.MODID,p_49818_,componentShift);
 
 
     }

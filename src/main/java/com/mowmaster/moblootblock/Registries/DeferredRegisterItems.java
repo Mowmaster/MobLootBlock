@@ -1,4 +1,4 @@
-package com.mowmaster.moblootblock.DeferredRegistries;
+package com.mowmaster.moblootblock.Registries;
 
 import com.mowmaster.moblootblock.Items.MobLootItem;
 import com.mowmaster.moblootblock.moblootblock;

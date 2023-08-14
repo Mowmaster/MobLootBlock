@@ -1,13 +1,10 @@
-package com.mowmaster.moblootblock.DeferredRegistries;
+package com.mowmaster.moblootblock.Registries;
 
-import Blocks.BaseMobLootBlock;
+import com.mowmaster.moblootblock.Blocks.BaseMobLootBlock;
 import com.mowmaster.moblootblock.moblootblock;
-import com.mowmaster.mowlib.MowLibUtils.MowLibTooltipUtils;
-import net.minecraft.ChatFormatting;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
