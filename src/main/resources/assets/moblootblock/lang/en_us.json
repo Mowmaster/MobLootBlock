@@ -3,6 +3,10 @@
   "item.moblootblock.mob_bit": "Mob Bit",
   "item.moblootblock.mob_piece": "Mob Piece",
   "item.moblootblock.mob_chunk": "Mob Chunk",
-  "moblootblock.moblootitem.tooltip": "A Piece of a Mob: "
+  "moblootblock.moblootitem.tooltip": "A Piece of a Mob: ",
 
+
+  "block.moblootblock.mobblock_creeper": "Creeper Mob Loot Block",
+  "block.moblootblock.mobblock_witch": "Witch Mob Loot Block",
+  "block.moblootblock.mobblock_pig": "Pig Mob Loot Block"
 }
