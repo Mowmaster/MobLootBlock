@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "BBB",
+    "BBB"
+  ],
+  "key": {
+    "B": {
+      "item": "moblootblock:mob_bit",
+      "type": "forge:nbt",
+      "nbt": {
+        "moblootblock_moblootitem": "minecraft:spider"
+      }
+    }
+  },
+  "result": {
+    "item": "moblootblock:mob_piece",
+    "type": "forge:nbt",
+    "nbt": {
+      "moblootblock_moblootitem": "minecraft:spider"
+    },
+    "count": 1
+  }
+
+}

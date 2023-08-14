@@ -1,9 +1,15 @@
 {
   "itemGroup.moblootblock": "Mob Loot Block",
+  "moblootblock.moblootblock.tooltip_crafting": "Craft by Combining 9 Chunks of a specific mob together in a crafting bench.",
+  "moblootblock.moblootblock.tooltip_drops": "Breaking this block will drop mob specific loot.",
+  "moblootblock.moblootblock.tooltip_silktouch": "(Can be Picked Up with Silktouch)",
   "item.moblootblock.mob_bit": "Mob Bit",
   "item.moblootblock.mob_piece": "Mob Piece",
   "item.moblootblock.mob_chunk": "Mob Chunk",
   "moblootblock.moblootitem.tooltip": "A Piece of a Mob: ",
+  "moblootblock.moblootitem.tooltip_default": "Kill mobs with the Curse of Binding Enchantment on a weapon to 'Bind' the essence of mobs to bits in the world.",
+  "moblootblock.moblootitem.tooltip_default_piece": "Craft 9 Bits of any 1 kind of mob together to make a larger Piece of that mob.",
+  "moblootblock.moblootitem.tooltip_default_chunk": "Craft 9 Pieces of any 1 kind of mob together to make a larger Chunk of that mob.",
 
   "block.moblootblock.mobblock_allay": "Allay Mob Loot Block",
   "block.moblootblock.mobblock_axolotl": "Axolotl Mob Loot Block",

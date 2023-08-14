@@ -1,6 +1,7 @@
 package com.mowmaster.moblootblock;
 
 import com.mojang.logging.LogUtils;
+import com.mowmaster.moblootblock.DeferredRegistries.DeferredCreativeTabRegistry;
 import com.mowmaster.moblootblock.DeferredRegistries.DeferredRegisterBlocks;
 import com.mowmaster.moblootblock.DeferredRegistries.DeferredRegisterItems;
 import net.minecraft.client.Minecraft;
@@ -53,7 +54,7 @@ public class moblootblock
         DeferredRegisterItems.ITEMS.register(modEventBus);
         DeferredRegisterBlocks.BLOCKS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so tabs get registered
-        //CREATIVE_MODE_TABS.register(modEventBus);
+        DeferredCreativeTabRegistry.DEF_REG.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
