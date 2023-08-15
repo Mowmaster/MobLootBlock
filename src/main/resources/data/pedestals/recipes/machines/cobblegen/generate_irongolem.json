@@ -1,0 +1,18 @@
+{
+  "type": "pedestals:cobblegen",
+  "blockBelow": {
+    "item": "moblootblock:mobblock_irongolem"
+  },
+  "experience": {
+    "experienceValue": 5
+  },
+  "result": {
+    "item": "moblootblock:mobblock_irongolem"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "pedestals"
+    }
+  ]
+}

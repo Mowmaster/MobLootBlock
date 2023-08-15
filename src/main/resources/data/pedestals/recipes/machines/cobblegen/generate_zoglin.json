@@ -1,0 +1,18 @@
+{
+  "type": "pedestals:cobblegen",
+  "blockBelow": {
+    "item": "moblootblock:mobblock_zoglin"
+  },
+  "experience": {
+    "experienceValue": 10
+  },
+  "result": {
+    "item": "moblootblock:mobblock_zoglin"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "pedestals"
+    }
+  ]
+}

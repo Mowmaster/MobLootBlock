@@ -1,0 +1,18 @@
+{
+  "type": "pedestals:cobblegen",
+  "blockBelow": {
+    "item": "moblootblock:mobblock_glowsquid"
+  },
+  "experience": {
+    "experienceValue": 1
+  },
+  "result": {
+    "item": "moblootblock:mobblock_glowsquid"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "pedestals"
+    }
+  ]
+}
