@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "BBB",
+    "BBB"
+  ],
+  "key": {
+    "B": {
+      "item": "moblootblock:mob_chunk",
+      "type": "forge:nbt",
+      "nbt": {
+        "moblootblock_moblootitem": "minecraft:guardian"
+      }
+    }
+  },
+  "result": {
+    "item": "moblootblock:mobblock_guardian",
+    "count": 1
+  }
+}

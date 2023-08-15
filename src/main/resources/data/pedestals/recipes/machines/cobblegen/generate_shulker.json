@@ -1,0 +1,18 @@
+{
+  "type": "pedestals:cobblegen",
+  "blockBelow": {
+    "item": "moblootblock:mobblock_shulker"
+  },
+  "experience": {
+    "experienceValue": 10
+  },
+  "result": {
+    "item": "moblootblock:mobblock_shulker"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "pedestals"
+    }
+  ]
+}

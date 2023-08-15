@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "BBB",
+    "BBB"
+  ],
+  "key": {
+    "B": {
+      "item": "moblootblock:mob_piece",
+      "type": "forge:nbt",
+      "nbt": {
+        "moblootblock_moblootitem": "minecraft:hoglin"
+      }
+    }
+  },
+  "result": {
+    "item": "moblootblock:mob_chunk",
+    "type": "forge:nbt",
+    "nbt": {
+      "moblootblock_moblootitem": "minecraft:hoglin"
+    },
+    "count": 1
+  }
+
+}

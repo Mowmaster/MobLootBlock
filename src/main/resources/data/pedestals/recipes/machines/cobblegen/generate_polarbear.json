@@ -1,0 +1,18 @@
+{
+  "type": "pedestals:cobblegen",
+  "blockBelow": {
+    "item": "moblootblock:mobblock_polarbear"
+  },
+  "experience": {
+    "experienceValue": 10
+  },
+  "result": {
+    "item": "moblootblock:mobblock_polarbear"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "pedestals"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "type": "pedestals:cobblegen",
+  "blockBelow": {
+    "item": "moblootblock:mobblock_mooshroom"
+  },
+  "experience": {
+    "experienceValue": 1
+  },
+  "result": {
+    "item": "moblootblock:mobblock_mooshroom"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "pedestals"
+    }
+  ]
+}

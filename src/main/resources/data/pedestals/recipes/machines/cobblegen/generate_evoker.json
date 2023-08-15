@@ -1,0 +1,18 @@
+{
+  "type": "pedestals:cobblegen",
+  "blockBelow": {
+    "item": "moblootblock:mobblock_evoker"
+  },
+  "experience": {
+    "experienceValue": 10
+  },
+  "result": {
+    "item": "moblootblock:mobblock_evoker"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "pedestals"
+    }
+  ]
+}

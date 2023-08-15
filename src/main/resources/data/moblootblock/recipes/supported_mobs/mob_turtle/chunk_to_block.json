@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "BBB",
+    "BBB"
+  ],
+  "key": {
+    "B": {
+      "item": "moblootblock:mob_chunk",
+      "type": "forge:nbt",
+      "nbt": {
+        "moblootblock_moblootitem": "minecraft:turtle"
+      }
+    }
+  },
+  "result": {
+    "item": "moblootblock:mobblock_turtle",
+    "count": 1
+  }
+}

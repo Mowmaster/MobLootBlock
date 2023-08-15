@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "BBB",
+    "BBB"
+  ],
+  "key": {
+    "B": {
+      "item": "moblootblock:mob_chunk",
+      "type": "forge:nbt",
+      "nbt": {
+        "moblootblock_moblootitem": "minecraft:squid"
+      }
+    }
+  },
+  "result": {
+    "item": "moblootblock:mobblock_squid",
+    "count": 1
+  }
+}
