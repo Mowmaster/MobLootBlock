@@ -6,7 +6,6 @@ import com.mowmaster.moblootblock.Registries.DeferredRegisterItems;
 import com.mowmaster.moblootblock.moblootblock;
 import com.mowmaster.mowlib.MowLibUtils.MowLibCompoundTagUtils;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
@@ -17,7 +16,6 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -27,7 +25,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 @Mod.EventBusSubscriber
 public class LootModifier {
 
-    public static final TagKey<EntityType<?>> MOBALLOWLIST = TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation(moblootblock.MODID, "moblootblock_supported_mobs"));
+    public static final TagKey<EntityType<?>> MOBALLOWLIST = TagKey.create(ForgeRegistries.ENTITY_TYPES.getRegistryKey(), new ResourceLocation(moblootblock.MODID, "moblootblock_supported_mobs"));
 
     //https://github.com/Mrbysco/ForceCraft/blob/1.20/src/main/java/com/mrbysco/forcecraft/handlers/LootingHandler.java
     @SubscribeEvent()
@@ -49,7 +47,7 @@ public class LootModifier {
                 if(entity.getType().is(MOBALLOWLIST))
                 {
                     BlockPos entityPos = entity.blockPosition();
-                    Level entityLevel = entity.level();
+                    Level entityLevel = entity.level;
                     ResourceLocation entityLoc = ForgeRegistries.ENTITY_TYPES.getKey(entity.getType());
 
                     int chanceMax = MobLootBlockConfig.COMMON.drops_Modifier.get();

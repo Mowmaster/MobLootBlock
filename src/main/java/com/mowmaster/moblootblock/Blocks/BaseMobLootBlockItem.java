@@ -9,7 +9,9 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.BaseSpawner;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -43,7 +45,6 @@ public class BaseMobLootBlockItem extends BlockItem {
                 return super.useOn(p_43223_);
             }
             else {
-
                 ItemStack itemstack = p_43223_.getItemInHand();
                 BlockPos blockpos = p_43223_.getClickedPos();
                 Direction direction = p_43223_.getClickedFace();
@@ -53,15 +54,18 @@ public class BaseMobLootBlockItem extends BlockItem {
                 {
                     if (blockstate.is(Blocks.SPAWNER)) {
                         BlockEntity blockentity = level.getBlockEntity(blockpos);
-                        if (blockentity instanceof SpawnerBlockEntity) {
-                            SpawnerBlockEntity spawnerblockentity = (SpawnerBlockEntity)blockentity;
-                            EntityType<?> entitytype1 = getTypeFromBlock();
-                            spawnerblockentity.setEntityId(entitytype1, level.getRandom());
-                            blockentity.setChanged();
-                            level.sendBlockUpdated(blockpos, blockstate, blockstate, 3);
-                            level.gameEvent(p_43223_.getPlayer(), GameEvent.BLOCK_CHANGE, blockpos);
-                            itemstack.shrink(1);
-                            return InteractionResult.CONSUME;
+                        if (blockstate.is(Blocks.SPAWNER)) {
+                            BlockEntity blockentity1 = level.getBlockEntity(blockpos);
+                            if (blockentity1 instanceof SpawnerBlockEntity) {
+                                BaseSpawner basespawner = ((SpawnerBlockEntity)blockentity1).getSpawner();
+                                EntityType<?> entitytype1 = getTypeFromBlock();
+                                basespawner.setEntityId(entitytype1);
+                                blockentity1.setChanged();
+                                level.sendBlockUpdated(blockpos, blockstate, blockstate, 3);
+                                level.gameEvent(p_43223_.getPlayer(), GameEvent.BLOCK_CHANGE, blockpos);
+                                itemstack.shrink(1);
+                                return InteractionResult.CONSUME;
+                            }
                         }
                     }
                 }

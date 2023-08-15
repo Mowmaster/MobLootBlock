@@ -9,7 +9,6 @@ import com.mowmaster.moblootblock.Registries.DeferredRegisterItems;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -51,7 +50,7 @@ public class moblootblock
         // Register the Deferred Register to the mod event bus so tabs get registered
         // Register the item to a creative tab
         //modEventBus.addListener(this::addCreative);
-        DeferredCreativeTabRegistry.DEF_REG.register(modEventBus);
+        //DeferredCreativeTabRegistry.DEF_REG.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -62,13 +61,6 @@ public class moblootblock
         // Some common setup code
         LOGGER.info("HELLO FROM COMMON SETUP");
 
-    }
-
-    // Add the example block item to the building blocks tab
-    private void addCreative(BuildCreativeModeTabContentsEvent event)
-    {
-        /*if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
-            event.accept(EXAMPLE_BLOCK_ITEM);*/
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
