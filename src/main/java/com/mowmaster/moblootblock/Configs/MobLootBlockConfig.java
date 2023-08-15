@@ -30,7 +30,7 @@ public class MobLootBlockConfig
                     .defineInRange("drops_Chance", 20, 1, Integer.MAX_VALUE);
             drops_AmountMax = builder
                     .comment("The Maximum amount of Drops (with looting)")
-                    .defineInRange("drops_MaxAmount", 1, 1, Integer.MAX_VALUE);
+                    .defineInRange("drops_MaxAmount", 5, 1, Integer.MAX_VALUE);
             builder.pop();
 
             builder.comment("Mob Loot Block Options").push("Mob_Loot_Block_Configs");

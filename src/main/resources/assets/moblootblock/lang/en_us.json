@@ -1,5 +1,8 @@
 {
   "itemGroup.moblootblock": "Mob Loot Block",
+
+  "enchantment.moblootblock.moblootblockdrops": "Curse of Essence Binding",
+
   "moblootblock.description_shift": "Press Shift for More Info:",
   "moblootblock.moblootblock.tooltip_crafting": "Craft by Combining 9 Chunks of a specific mob together in a crafting bench.",
   "moblootblock.moblootblock.tooltip_drops": "Breaking this block will drop mob specific loot.",

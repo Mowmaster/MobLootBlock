@@ -1,6 +1,7 @@
 package com.mowmaster.moblootblock.EventHandlers;
 
 import com.mowmaster.moblootblock.Configs.MobLootBlockConfig;
+import com.mowmaster.moblootblock.Registries.DeferredRegisterEnchants;
 import com.mowmaster.moblootblock.Registries.DeferredRegisterItems;
 import com.mowmaster.moblootblock.moblootblock;
 import com.mowmaster.mowlib.MowLibUtils.MowLibCompoundTagUtils;
@@ -39,7 +40,7 @@ public class LootModifier {
         Entity source = event.getSource().getEntity();
         if (source instanceof Player player) {
 
-            int hasEnchant = player.getMainHandItem().getEnchantmentLevel(Enchantments.BINDING_CURSE);
+            int hasEnchant = player.getMainHandItem().getEnchantmentLevel(DeferredRegisterEnchants.MOBLOOTBLOCK_DROPS.get());
             if(hasEnchant>0)
             {
                 RandomSource rand = player.getRandom();
@@ -52,14 +53,13 @@ public class LootModifier {
                     ResourceLocation entityLoc = ForgeRegistries.ENTITY_TYPES.getKey(entity.getType());
 
                     int chanceMax = MobLootBlockConfig.COMMON.drops_Modifier.get();
-                    System.out.println(chanceMax);
                     if (looting > 0) {
                         chanceMax = chanceMax / looting;
                         if (chanceMax <= 0) {
                             chanceMax = 1;
                         }
                     }
-                    System.out.println(chanceMax);
+
                     float dropChance = rand.nextInt(Math.abs(chanceMax));
                     if (dropChance == 0) {
                         //https://github.com/CreeperHost/SoulShards/blob/1.20/src/main/java/net/creeperhost/soulshardsrespawn/core/EventHandler.java

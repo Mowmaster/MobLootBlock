@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import com.mowmaster.moblootblock.Configs.MobLootBlockConfig;
 import com.mowmaster.moblootblock.Registries.DeferredCreativeTabRegistry;
 import com.mowmaster.moblootblock.Registries.DeferredRegisterBlocks;
+import com.mowmaster.moblootblock.Registries.DeferredRegisterEnchants;
 import com.mowmaster.moblootblock.Registries.DeferredRegisterItems;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
@@ -46,6 +47,7 @@ public class moblootblock
         // Register the Deferred Register to the mod event bus so items get registered
         DeferredRegisterItems.ITEMS.register(modEventBus);
         DeferredRegisterBlocks.BLOCKS.register(modEventBus);
+        DeferredRegisterEnchants.ENCHANTMENTS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so tabs get registered
         // Register the item to a creative tab
         //modEventBus.addListener(this::addCreative);
