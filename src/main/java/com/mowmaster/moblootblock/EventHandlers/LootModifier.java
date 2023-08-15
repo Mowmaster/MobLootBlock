@@ -1,5 +1,6 @@
 package com.mowmaster.moblootblock.EventHandlers;
 
+import com.mowmaster.moblootblock.Configs.MobLootBlockConfig;
 import com.mowmaster.moblootblock.Registries.DeferredRegisterItems;
 import com.mowmaster.moblootblock.moblootblock;
 import com.mowmaster.mowlib.MowLibUtils.MowLibCompoundTagUtils;
@@ -50,17 +51,26 @@ public class LootModifier {
                     Level entityLevel = entity.level();
                     ResourceLocation entityLoc = ForgeRegistries.ENTITY_TYPES.getKey(entity.getType());
 
-                    int chanceMax = 20;
+                    int chanceMax = MobLootBlockConfig.COMMON.drops_Modifier.get();
+                    System.out.println(chanceMax);
                     if (looting > 0) {
                         chanceMax = chanceMax / looting;
-                        if (chanceMax < 0) {
+                        if (chanceMax <= 0) {
                             chanceMax = 1;
                         }
                     }
-                    float dropChance = rand.nextInt(chanceMax);
+                    System.out.println(chanceMax);
+                    float dropChance = rand.nextInt(Math.abs(chanceMax));
                     if (dropChance == 0) {
                         //https://github.com/CreeperHost/SoulShards/blob/1.20/src/main/java/net/creeperhost/soulshardsrespawn/core/EventHandler.java
-                        ItemStack getDroppedChunk = new ItemStack(DeferredRegisterItems.MOB_BIT.get(), rand.nextInt(Math.max(1, looting)) + 1);
+
+                        int itemDrop = MobLootBlockConfig.COMMON.drops_Type.get();
+                        int itemLooting = MobLootBlockConfig.COMMON.drops_AmountMax.get();
+                        int lootingAmount = (rand.nextInt(Math.max(1, looting)) + 1);
+                        ItemStack getDroppedChunk = new ItemStack(DeferredRegisterItems.MOB_BIT.get(), (lootingAmount>itemLooting)?(itemLooting):(lootingAmount));
+                        if(itemDrop == 1)getDroppedChunk = new ItemStack(DeferredRegisterItems.MOB_PIECE.get(), (lootingAmount>itemLooting)?(itemLooting):(lootingAmount));
+                        if(itemDrop == 2)getDroppedChunk = new ItemStack(DeferredRegisterItems.MOB_CHUNK.get(), (lootingAmount>itemLooting)?(itemLooting):(lootingAmount));
+
                         getDroppedChunk.setTag(MowLibCompoundTagUtils.writeStringToNBT(moblootblock.MODID,getDroppedChunk.getOrCreateTag(),entityLoc.toString(),"_moblootitem"));
                         //MowLibCompoundTagUtils.readStringFromNBT(moblootblock.MODID,p_41421_.getOrCreateTag(),"moblootitem")
 

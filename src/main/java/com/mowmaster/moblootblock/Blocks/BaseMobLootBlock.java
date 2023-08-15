@@ -1,5 +1,6 @@
 package com.mowmaster.moblootblock.Blocks;
 
+import com.mowmaster.moblootblock.Configs.MobLootBlockConfig;
 import com.mowmaster.moblootblock.moblootblock;
 import com.mowmaster.mowlib.MowLibUtils.MowLibTooltipUtils;
 import net.minecraft.ChatFormatting;
@@ -104,13 +105,16 @@ public class BaseMobLootBlock extends Block {
         componentSilk.withStyle(ChatFormatting.AQUA);
         MowLibTooltipUtils.addTooltipMessage(p_49818_,p_49816_,componentSilk);
 
-        MutableComponent componentShift = Component.translatable(moblootblock.MODID + ".moblootblock.tooltip_shiftmsg");
-        componentShift.withStyle(ChatFormatting.GREEN);
-        MutableComponent componentShiftAdditional = Component.translatable(moblootblock.MODID + ".moblootblock.tooltip_shiftmsgtwo");
-        componentShiftAdditional.withStyle(ChatFormatting.LIGHT_PURPLE);
-        componentShift.append(componentShiftAdditional);
-        MowLibTooltipUtils.addTooltipShiftMessage(moblootblock.MODID,p_49818_,componentShift);
-
-
+        boolean spawner = MobLootBlockConfig.COMMON.moblootblock_allowSpawnerChanging.get();
+        boolean mobspawn = MobLootBlockConfig.COMMON.moblootblock_allowMobSpawning.get();
+        if(spawner || mobspawn)
+        {
+            MutableComponent componentShift = (mobspawn)?(Component.translatable(moblootblock.MODID + ".moblootblock.tooltip_shiftmsg")):(Component.literal(""));
+            componentShift.withStyle(ChatFormatting.GREEN);
+            MutableComponent componentShiftAdditional = Component.translatable(moblootblock.MODID + ".moblootblock.tooltip_shiftmsgtwo");
+            componentShiftAdditional.withStyle(ChatFormatting.LIGHT_PURPLE);
+            if(spawner){componentShift.append(componentShiftAdditional);}
+            MowLibTooltipUtils.addTooltipShiftMessage(moblootblock.MODID,p_49818_,componentShift);
+        }
     }
 }

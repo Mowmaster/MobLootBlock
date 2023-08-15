@@ -1,5 +1,6 @@
 package com.mowmaster.moblootblock.Blocks;
 
+import com.mowmaster.moblootblock.Configs.MobLootBlockConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -40,40 +41,50 @@ public class BaseMobLootBlockItem extends BlockItem {
             Level level = p_43223_.getLevel();
             if (!(level instanceof ServerLevel)) {
                 return super.useOn(p_43223_);
-            } else {
+            }
+            else {
+
                 ItemStack itemstack = p_43223_.getItemInHand();
                 BlockPos blockpos = p_43223_.getClickedPos();
                 Direction direction = p_43223_.getClickedFace();
                 BlockState blockstate = level.getBlockState(blockpos);
-                if (blockstate.is(Blocks.SPAWNER)) {
-                    BlockEntity blockentity = level.getBlockEntity(blockpos);
-                    if (blockentity instanceof SpawnerBlockEntity) {
-                        SpawnerBlockEntity spawnerblockentity = (SpawnerBlockEntity)blockentity;
-                        EntityType<?> entitytype1 = getTypeFromBlock();
-                        spawnerblockentity.setEntityId(entitytype1, level.getRandom());
-                        blockentity.setChanged();
-                        level.sendBlockUpdated(blockpos, blockstate, blockstate, 3);
-                        level.gameEvent(p_43223_.getPlayer(), GameEvent.BLOCK_CHANGE, blockpos);
-                        itemstack.shrink(1);
-                        return InteractionResult.CONSUME;
+
+                if(MobLootBlockConfig.COMMON.moblootblock_allowSpawnerChanging.get())
+                {
+                    if (blockstate.is(Blocks.SPAWNER)) {
+                        BlockEntity blockentity = level.getBlockEntity(blockpos);
+                        if (blockentity instanceof SpawnerBlockEntity) {
+                            SpawnerBlockEntity spawnerblockentity = (SpawnerBlockEntity)blockentity;
+                            EntityType<?> entitytype1 = getTypeFromBlock();
+                            spawnerblockentity.setEntityId(entitytype1, level.getRandom());
+                            blockentity.setChanged();
+                            level.sendBlockUpdated(blockpos, blockstate, blockstate, 3);
+                            level.gameEvent(p_43223_.getPlayer(), GameEvent.BLOCK_CHANGE, blockpos);
+                            itemstack.shrink(1);
+                            return InteractionResult.CONSUME;
+                        }
                     }
                 }
-                else if(p_43223_.getPlayer().isCrouching())
+
+                if(MobLootBlockConfig.COMMON.moblootblock_allowMobSpawning.get())
                 {
-                    BlockPos blockpos1;
-                    if (blockstate.getCollisionShape(level, blockpos).isEmpty()) {
-                        blockpos1 = blockpos;
-                    } else {
-                        blockpos1 = blockpos.relative(direction);
-                    }
+                    if(p_43223_.getPlayer().isCrouching())
+                    {
+                        BlockPos blockpos1;
+                        if (blockstate.getCollisionShape(level, blockpos).isEmpty()) {
+                            blockpos1 = blockpos;
+                        } else {
+                            blockpos1 = blockpos.relative(direction);
+                        }
 
-                    EntityType<?> entitytype = getTypeFromBlock();
-                    if (entitytype.spawn((ServerLevel)level, itemstack, p_43223_.getPlayer(), blockpos1, MobSpawnType.SPAWN_EGG, true, !Objects.equals(blockpos, blockpos1) && direction == Direction.UP) != null) {
-                        itemstack.shrink(1);
-                        level.gameEvent(p_43223_.getPlayer(), GameEvent.ENTITY_PLACE, blockpos);
-                    }
+                        EntityType<?> entitytype = getTypeFromBlock();
+                        if (entitytype.spawn((ServerLevel)level, itemstack, p_43223_.getPlayer(), blockpos1, MobSpawnType.SPAWN_EGG, true, !Objects.equals(blockpos, blockpos1) && direction == Direction.UP) != null) {
+                            itemstack.shrink(1);
+                            level.gameEvent(p_43223_.getPlayer(), GameEvent.ENTITY_PLACE, blockpos);
+                        }
 
-                    return InteractionResult.CONSUME;
+                        return InteractionResult.CONSUME;
+                    }
                 }
             }
         }
