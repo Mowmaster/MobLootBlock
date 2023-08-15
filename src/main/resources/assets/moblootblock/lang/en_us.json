@@ -13,7 +13,7 @@
   "item.moblootblock.mob_piece": "Mob Piece",
   "item.moblootblock.mob_chunk": "Mob Chunk",
   "moblootblock.moblootitem.tooltip": "A Piece of a Mob: ",
-  "moblootblock.moblootitem.tooltip_default": "Kill mobs with the Curse of Binding Enchantment on a weapon to 'Bind' the essence of mobs to bits in the world.",
+  "moblootblock.moblootitem.tooltip_default": "Kill mobs with the Curse of Essence Binding Enchantment on a weapon to 'Bind' the 'Essence' of mobs to bits in the world.",
   "moblootblock.moblootitem.tooltip_default_piece": "Craft 9 Bits of any 1 kind of mob together to make a larger Piece of that mob.",
   "moblootblock.moblootitem.tooltip_default_chunk": "Craft 9 Pieces of any 1 kind of mob together to make a larger Chunk of that mob.",
 

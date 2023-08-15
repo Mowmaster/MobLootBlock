@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moblootblock:mob_bit"
+    },
+    {
+      "item": "moblootblock:mob_bit"
+    },
+    {
+      "item": "moblootblock:mob_bit"
+    },
+    {
+      "item": "moblootblock:mob_bit"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "item": "moblootblock:mob_bit"
+    },
+    {
+      "item": "moblootblock:mob_bit"
+    },
+    {
+      "item": "moblootblock:mob_bit"
+    }
+  ],
+  "result": {
+    "item": "minecraft:experience_bottle",
+    "count": 7
+  }
+
+}

@@ -27,7 +27,7 @@ public class MobLootBlockConfig
                     .defineInRange("drops_Type", 0, 0, 2);
             drops_Modifier = builder
                     .comment("The Chance the Drop will Happen, lower values are better chances.")
-                    .defineInRange("drops_Chance", 20, 1, Integer.MAX_VALUE);
+                    .defineInRange("drops_Chance", 10, 1, Integer.MAX_VALUE);
             drops_AmountMax = builder
                     .comment("The Maximum amount of Drops (with looting)")
                     .defineInRange("drops_MaxAmount", 5, 1, Integer.MAX_VALUE);
